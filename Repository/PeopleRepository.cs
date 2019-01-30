@@ -8,6 +8,122 @@ namespace dotnetTest.Repository
     public class PeopleRepository : IRepository<People, string>
     {
         public static List<People> list = new List<People>();
+
+        public PeopleRepository()
+        {
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "David Koch",
+                Email = "david@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Em andamento"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Charles Koch",
+                Email = "koch@gmail.com",
+                Status = new Status
+                {
+                    Id = 2,
+                    StatusName = "Atrasado"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Michael Bloomberg",
+                Email = "bloomberg@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Atrasado"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Larry Ellison",
+                Email = "larry@gmail.com",
+                Status = new Status
+                {
+                    Id = 2,
+                    StatusName = "Atrasado"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Mark Zuckerberg",
+                Email = "mark@gmail.com",
+                Status = new Status
+                {
+                    Id = 2,
+                    StatusName = "Atrasado"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Jeff Bezos",
+                Email = "jeff@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Em andamento"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Carlos Slim",
+                Email = "carlos@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Em andamento"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Warren Buffett",
+                Email = "warren@gmail.com",
+                Status = new Status
+                {
+                    Id = 2,
+                    StatusName = "Atrasado"
+                }
+            });
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Amâncio Ortega",
+                Email = "ortega@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Em andamento"
+                }
+            });
+
+            list.Add(new People
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = "Bill Gates",
+                Email = "gates@gmail.com",
+                Status = new Status
+                {
+                    Id = 1,
+                    StatusName = "Em andamento"
+                }
+            });
+        }
+
         public List<People> All() => new List<People>(list);
         public People One(string id) => list.Single(people => people.Id == id);
 
