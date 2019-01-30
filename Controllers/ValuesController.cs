@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace dotnetTest.Controllers
 {
-    [Route("api")]
+    [Route("api/")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -20,13 +20,14 @@ namespace dotnetTest.Controllers
             return repository.All();
         }
 
-        [HttpGet("/orderByEmail")]
+        [HttpGet("orderByEmail")]
         public ActionResult<IEnumerable<People>> OrderByEmail()
         {
+            Console.WriteLine(repository.OrderByEmail());
             return repository.OrderByEmail();
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("/find/{id}")]
         public ActionResult<People> Get(string id)
         {
             return repository.One(id);
